@@ -9,6 +9,7 @@ import {
 
 import { useMutation, useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
+import { REMOVE_BOOK } from "../utils/mutations"
 
 import Auth from "../utils/auth";
 
