@@ -9,7 +9,7 @@ import {
 
 import { useMutation, useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
-import { REMOVE_BOOK } from "../utils/mutations"
+import { REMOVE_BOOK } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
@@ -25,12 +25,15 @@ const SavedBooks = () => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) return false;
+
     try {
-      await removeBook({
+      const { data } = await removeBook({
         variables: { bookId },
       });
+
       removeBookId(bookId);
-      window.location.reload;
+      window.location.reload();
+
     } catch (e) {
       console.error(e);
     }
