@@ -7,7 +7,7 @@ export const GET_ME = gql`
       username
       email
       bookCount
-      savedBook {
+      savedBooks {
         title
         authors
         description
