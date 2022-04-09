@@ -7,7 +7,7 @@ import {
   Button,
 } from "react-bootstrap";
 
-import { useMutation, useQuery } from "@apollo/client";
+import { useQuery,  useMutation } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
 
@@ -17,7 +17,7 @@ import { removeBookId } from "../utils/localStorage";
 
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
-  const [removeBook, { error }] = useMutation(REMOVE_BOOK);
+  const [removeBook] = useMutation(REMOVE_BOOK);
 
   const userData = data?.me || [];
 
