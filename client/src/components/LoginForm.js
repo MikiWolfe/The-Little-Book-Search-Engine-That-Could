@@ -22,15 +22,14 @@ const LoginForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-
     try {
       const { data } = await loginUser({
         variables: { ...userFormData },
       });
 
       Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
     }
 
     setUserFormData({

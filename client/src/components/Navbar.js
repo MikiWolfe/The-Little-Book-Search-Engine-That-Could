@@ -40,12 +40,13 @@ const AppNavbar = () => {
       </Navbar>
       {/* set modal data up */}
       <Modal
+      animation={false}
         size='lg'
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
         {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey='login'>
+        <Tab.Container defaultActiveKey='login' transition= {false}>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
